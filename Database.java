@@ -18,8 +18,10 @@ public class Database implements Serializable{
     private final String host = "localhost/";
     private final String db_name = "EmotionalSongs";
     private final String url = protocol + host + db_name;
-    private final String user = "postgres";
-    private final String password = "admin";
+   // private final String user = "postgres";
+   // private final String password = "admin";
+    private static String user;
+    private static String password;
 
     //Variabili connessione DB
     private static Database database;
@@ -36,6 +38,14 @@ public class Database implements Serializable{
         if (database == null)
             database = new Database();
         return database;
+    }
+
+    public static void setUser(String u){
+        user=u;
+    }
+
+    public static void setPassword(String p){
+        password=p;
     }
 
     public static Statement getStatement() {

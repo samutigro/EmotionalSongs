@@ -27,12 +27,6 @@ public class serverES extends UnicastRemoteObject implements InterfacciaDatabase
         super();
         db = new Database();
     }
-    
-    public static void main(String[] args) throws RemoteException, SQLException {
-        serverES serverImpl = new serverES();
-        Registry registry = LocateRegistry.createRegistry(8999);
-        registry.rebind("SERVER", serverImpl);
-    }
 
     public Database getInstance() throws SQLException, RemoteException {
         return db.getInstance();
@@ -180,4 +174,6 @@ public class serverES extends UnicastRemoteObject implements InterfacciaDatabase
         }
         return arrayList;
     }
+
+
 }
