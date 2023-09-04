@@ -25,7 +25,7 @@ public class serverES extends UnicastRemoteObject implements InterfacciaDatabase
 
     public serverES() throws RemoteException, SQLException {
         super();
-        db = new Database();
+        db = Database.getInstance();
     }
 
     public Database getInstance() throws SQLException, RemoteException {

@@ -77,9 +77,7 @@ public class clientES implements ActionListener {
      * Costruttore della classe EmotionalSongs.GUI che implementa l'interfaccia grafica
      * @throws SQLException Rappresenta un'eccezione generata dall'API JDBC; quando si utilizza un database tramite JDBC, possono verificarsi diversi potenziali errori come ad esempio errori di connessione al database, errori nelle istruzioni SQL o problemi con il database stesso. Quando si verifica uno di questi errori, l'API JDBC genera un SQLException per indicare che si è verificato un errore.
      */
-    public clientES(String user, String pwd) throws SQLException, RemoteException, NotBoundException {
-        Database.setUser(user);
-        Database.setPassword(pwd);
+    public clientES() throws SQLException, RemoteException, NotBoundException {
         try{
             //Permette il Cross Platform permettendo quindi alla EmotionalSongs.GUI di funzionare su diversi sistemi operativi come ad esempio macOS e Windows
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());

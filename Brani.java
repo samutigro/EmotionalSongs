@@ -10,6 +10,10 @@ import Database.Database;
 import Database.InterfacciaDatabase;
 import Database.Query;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -99,5 +103,34 @@ public class Brani {
             e.printStackTrace();
         }
         return outputDateStr;
+    }
+
+    public static void popola(Database db) throws SQLException, IOException, IOException {
+        FileReader fr = new FileReader("src/FiveHundredThousandSongs.txt");
+        BufferedReader br = new BufferedReader(fr);
+        String line="";
+        String anno="";
+        String codcanz="";
+        String autore="";
+        String titolo="";
+        String query="";
+        int xxx=257788*2;
+        String [] ar;
+        query="insert into canzoni (codcanz,titolo,autore,anno) values (?,?,?,?)";
+        PreparedStatement ps = db.getConnection().prepareStatement(query);
+        do{ line=br.readLine();
+            ar=line.split("<SEP>");
+            anno=ar[0];
+            codcanz=ar[1];
+            autore=ar[2];
+            titolo=ar[3];
+
+            ps.setString(1,codcanz);
+            ps.setString(2,titolo);
+            ps.setString(3,autore);
+            ps.setInt(4,Integer.parseInt(anno));
+            ps.executeUpdate();
+            xxx--;
+        }while(xxx!=0);
     }
 }
