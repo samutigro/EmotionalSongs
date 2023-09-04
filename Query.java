@@ -1,9 +1,4 @@
-package Database;/*
-Cermisoni Marco, MATRICOLA 748739, VA
-Oldani Marco, MATRICOLA 748243, VA
-De Vito Francesco, MATRICOLA 749044, VA
-Auteri Samuele, MATRICOLA 749710, VA
-*/
+package Database;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -19,7 +14,7 @@ public class Query implements Serializable {
     private String query;
 
     /**
-     * Costruttore della classe Database.Query avente un solo parametro
+     * Costruttore della classe Database.Database.Database.Query avente un solo parametro
      * @param query Stringa contenente la query
      */
     public Query(String query){

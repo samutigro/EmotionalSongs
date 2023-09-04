@@ -1,11 +1,5 @@
-package Database;/*
-Cermisoni Marco, MATRICOLA 748739, VA
-Oldani Marco, MATRICOLA 748243, VA
-De Vito Francesco, MATRICOLA 749044, VA
-Auteri Samuele, MATRICOLA 749710, VA
-*/
+package Database;
 
-import Database.Database;
 import EmotionalSongs.Utente;
 
 import java.rmi.Remote;

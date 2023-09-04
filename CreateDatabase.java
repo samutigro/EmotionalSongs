@@ -1,4 +1,5 @@
 package Database;
+
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.sql.*;
@@ -60,7 +61,7 @@ public class CreateDatabase {
                     e.printStackTrace();
                 }
 
-                System.out.println("Database creato con successo!");
+                System.out.println("Database.Database creato con successo!");
                 return false;
             }
 

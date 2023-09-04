@@ -6,14 +6,10 @@ Auteri Samuele, MATRICOLA 749710, VA
 */
 
 import Database.Database;
-import Database.Database;
 import Database.InterfacciaDatabase;
 import Database.Query;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -106,8 +102,9 @@ public class Brani {
     }
 
     public static void popola(Database db) throws SQLException, IOException, IOException {
-        FileReader fr = new FileReader("src/FiveHundredThousandSongs.txt");
-        BufferedReader br = new BufferedReader(fr);
+        InputStream inputStream = Brani.class.getResourceAsStream("/FiveHundredThousandSongs.txt");
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8"); // Specificare la codifica se necessario
+        BufferedReader br = new BufferedReader(inputStreamReader);
         String line="";
         String anno="";
         String codcanz="";

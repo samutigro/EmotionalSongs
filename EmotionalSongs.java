@@ -2,7 +2,6 @@ package EmotionalSongs;
 
 import Database.*;
 import Database.serverES;
-
 import javax.swing.*;
 import javax.xml.crypto.Data;
 import java.awt.*;
@@ -16,7 +15,6 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.sql.SQLException;
 import java.util.jar.JarEntry;
-
 import static Database.CreateDatabase.CreaDb;
 import static EmotionalSongs.Brani.popola;
 
@@ -24,6 +22,7 @@ public class EmotionalSongs {
     static String user ;
     static String pwd ;
     public static Boolean flag;
+
     public static void main(String[] args) throws SQLException, IOException, NotBoundException {
         // Creazione del frame principale
         JFrame frame = new JFrame("Input String");
@@ -86,8 +85,11 @@ public class EmotionalSongs {
 
 
             if(flag!=true){
+                String currentDirectory = System.getProperty("user.dir");
+                System.out.println("Current Directory: " + currentDirectory);
                 ThreadPopola t = new ThreadPopola(user,pwd);
             }
+
         });
 
         // Mostra il frame
